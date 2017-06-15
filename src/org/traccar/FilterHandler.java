@@ -94,7 +94,8 @@ public class FilterHandler extends BaseDataHandler {
     }
 
     private boolean filterDuplicate(Position position, Position last) {
-        return filterDuplicate && last != null && position.getFixTime().equals(last.getFixTime());
+        return filterDuplicate && last != null && position.getFixTime().equals(last.getFixTime())
+            && position.getAttributes().equals(last.getAttributes());
     }
 
     private boolean filterFuture(Position position) {
