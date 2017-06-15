@@ -89,8 +89,6 @@ public class FilterHandler extends BaseDataHandler {
            || position.getLatitude() < -90 || position.getLongitude() < -180);
     }
 
-    }
-
     private boolean filterZero(Position position) {
         return filterZero && position.getLatitude() == 0.0 && position.getLongitude() == 0.0;
     }
