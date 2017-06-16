@@ -15,6 +15,9 @@
  */
 package org.traccar;
 
+import java.util.Collection;
+import java.util.Iterator;
+
 import org.traccar.helper.DistanceCalculator;
 import org.traccar.helper.Log;
 import org.traccar.helper.UnitsConverter;
@@ -94,8 +97,16 @@ public class FilterHandler extends BaseDataHandler {
     }
 
     private boolean filterDuplicate(Position position, Position last) {
-        return filterDuplicate && last != null && position.getFixTime().equals(last.getFixTime())
-            && position.getAttributes().equals(last.getAttributes());
+        if (filterDuplicate && last != null && position.getFixTime().equals(last.getFixTime())) {
+            
+           
+            for (Iterator<(position.getAttributes().containsKey())> it = set.iterator(); it.hasNext();) { 
+            Boolean (position.getAttributes().containsKey()) = it.next(); 
+            if ((position.getAttributes().containsKey()).equals((last.getAttributes().containsKey())) { 
+                return true; }
+            } 
+            
+                } 
     }
 
     private boolean filterFuture(Position position) {
