@@ -99,7 +99,7 @@ public class FilterHandler extends BaseDataHandler {
 
     private boolean filterDuplicate(Position position, Position last) {
         if (filterDuplicate && last != null && position.getFixTime().equals(last.getFixTime())) {
-            if (last.getAttributes().containsKey(attribute).equal(position.getAttributes().containsKey(attribute))
+            if (!last.getAttributes().containsKey(attribute).equals(position.getAttributes().containsKey(attribute))
             { return true; }
       }
             
