@@ -101,7 +101,7 @@ public class FilterHandler extends BaseDataHandler {
                Object element = itr.next();
                if (element.equals(last.getAttributes())) {
                    return true;
-                                 }  
+                                 }
              }
         }
     }
