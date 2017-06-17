@@ -15,11 +15,13 @@
  */
 package org.traccar;
 
+import java.util.Collection;
+import java.util.Iterator;
+
 import org.traccar.helper.DistanceCalculator;
 import org.traccar.helper.Log;
 import org.traccar.helper.UnitsConverter;
 import org.traccar.model.Position;
-import java.util.Iterator;
 
 public class FilterHandler extends BaseDataHandler {
 
