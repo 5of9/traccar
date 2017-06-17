@@ -15,7 +15,6 @@
  */
 package org.traccar;
 
-import java.util.Collection;
 import java.util.Iterator;
 
 import org.traccar.helper.DistanceCalculator;
