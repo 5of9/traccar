@@ -102,7 +102,7 @@ public class FilterHandler extends BaseDataHandler {
             Iterator itr = position.getAttributes().iterator();  
             while(itr.hasNext()) {
          Object element = itr.next();
-         if element.equals(last.getAttributes()) {
+         if (element.equals(last.getAttributes())) {
             return true;
             }
       }
