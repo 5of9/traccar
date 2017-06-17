@@ -98,12 +98,11 @@ public class FilterHandler extends BaseDataHandler {
 
     private boolean filterDuplicate(Position position, Position last) {
         if (filterDuplicate && last != null && position.getFixTime().equals(last.getFixTime())) {
-            Iterator<String> itr = position.getAttributes().iterator();
-            while (itr.hasNext()) {
-               Object element = itr.next();
-               if (element.equals(last.getAttributes())) {
+            for (Iterator<String> itr = position.getAttributes().iterator(); itr.hasNext();) {
+               if ((iterator.next()).equals(last.getAttributes())) {
                    return true;
                                  }
+
              }
         }
     }
