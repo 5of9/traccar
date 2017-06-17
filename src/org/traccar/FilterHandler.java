@@ -19,6 +19,10 @@ import org.traccar.helper.DistanceCalculator;
 import org.traccar.helper.Log;
 import org.traccar.helper.UnitsConverter;
 import org.traccar.model.Position;
+import java.util.Collection;
+import java.util.Iterator;
+
+import org.traccar.model.Attribute;
 
 public class FilterHandler extends BaseDataHandler {
 
@@ -95,12 +99,15 @@ public class FilterHandler extends BaseDataHandler {
 
     private boolean filterDuplicate(Position position, Position last) {
         if (filterDuplicate && last != null && position.getFixTime().equals(last.getFixTime())) {
-            if (!last.getAttributes().containsKey(attribute).equals(position.getAttributes().containsKey(attribute))) {
-             return true;
+            Iterator itr = position.getAttributes().iterator();  
+            while(itr.hasNext()) {
+         Object element = itr.next();
+         if element.equals(last.getAttributes()) {
+            return true;
             }
       }
 
-
+        }
     }
 
     private boolean filterFuture(Position position) {
